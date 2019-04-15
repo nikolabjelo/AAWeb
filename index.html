@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<!-- This file is only used for local development. -->
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Superalgos</title>
+
+    <script src="https://unpkg.com/apollo-client-browser@1.7.0"></script>
+    <script type="text/javascript" src="Scripts/require.js"></script>
+    <script type="text/javascript" src="Scripts/AppPreLoader.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Saira" rel="stylesheet">
+
+</head>
+<body id="body" style="margin: 0px; padding: 0px; border: 0px; overflow:hidden;" onresize="window.canvasApp.eventHandler.raiseEvent('Browser Resized');" onload="
+
+    window.canvasApp = {
+        version: '1.0.0',  // This is used to avoid catching problems at the browser level.
+        sessionToken: '',
+        executingAt: 'Master App',
+        visible: true,
+        topMargin: 85,
+        urlPrefix: 'http://localhost:1337/',
+        graphQL: {
+            masterAppApiUrl: 'http://localhost:4100/graphql',
+        },
+        context: {}
+    };
+
+    loadAdvancedAlgosPlatform();
+
+    ">
+
+    <div id="masterApp"></div>
+    <div id="canvasApp"></div>
+</body>
+</html>
